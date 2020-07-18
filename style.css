@@ -1,0 +1,314 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d7d7d7;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #959595;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  font-size: 2em;
+  background-color: #fcfcfc;
+  padding: 20px;
+  box-shadow: 1px 1px 6px #929292;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+header img{
+  width: 100px;
+  height: auto;
+  margin: 0;
+  transition: 250ms;
+}
+
+header img:hover{
+  transform: scale(1,01);
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  display: table;
+  text-align: center;
+  margin: 0;
+}
+li {
+  display: table-cell;
+  position: relative;
+  margin: 0;
+  font-size: 20px;
+}
+a {
+  color: #6a6a6a;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background-color: #6a6a6a;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.infoContainer{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*________________________Overlay Menu________________________________*/
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: row;
+}
+
+.overlay-content1 {
+  position: relative;
+  top: 0;
+  width: 70%;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.overlay-content2 {
+  position: relative;
+  top: 0;
+  width: 30%;
+  text-align: center;
+  margin-top: 30px;
+  background-color: rgba(0,0,0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+i{
+  color: #d7d7d7;
+}
+
+.overlay-content2 a {
+  align-items: center;
+  margin-top: 15px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/*______________________Sections______________________________*/
+
+#home{
+  width: 100vw;
+  height: 100%;
+  background-color: #ffd4eb;
+}
+
+#about{
+  width: 100%;
+  height: 100%;
+  background-color: #def8ff;
+}
+
+#team{
+  width: 100%;
+  height: 100%;
+  background-color: #ecffde;
+}
+
+#projects{
+  width: 100%;
+  height: 100%;
+  background-color: #ffd9d9;
+}
+
+#contact{
+  width: 100%;
+  height: 100%;
+  background-color: #ffdcc4;
+}
+/*________________________ICON Hamburguer____________________________*/
+
+ .container {
+   display: none;
+   cursor: pointer;
+ }
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #6a6a6a;
+  margin: 5px 0;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-3px, 3px);
+  transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+/*________________________SocialArea____________________________*/
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+.facebook {
+  background: #3B5998;
+  opacity: 50%;
+  color: white;
+}
+.facebook:hover{
+  background: #3B5998;
+  opacity: 100%;
+}
+
+.instagram {
+  background: #ec6984;
+  opacity: 50%;
+  color: white;
+}
+.instagram:hover{
+  background: #ec6984;
+  opacity: 100%;
+}
+
+
+.mail {
+  background: #22b7ff;
+  opacity: 50%;
+  color: white;
+}
+.mail:hover{
+  background: #22b7ff;
+  opacity: 100%;
+}
+
+.linkedin {
+  background: #007bb5;
+  opacity: 50%;
+  color: white;
+}
+.linkedin:hover{
+  background: #007bb5;
+  opacity: 100%;
+}
+
+.youtube {
+  background: #bb0000;
+  opacity: 50%;
+  color: white;
+}
+.youtube:hover{
+  background: #bb0000;
+  opacity: 100%;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+/*________________Mobile_____________________________*/
+
+@media only screen and (max-width: 700px) {
+  .container{
+    display: block;
+  }
+  ul li{
+    display: none;
+  }
+  .icon-bar{
+    display: none;
+  }
+}
