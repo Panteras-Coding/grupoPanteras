@@ -56,7 +56,7 @@ TxtType.prototype.tick = function() {
 };
 
 window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
+    let elements = document.getElementsByClassName('typewrite');
     for (var i=0; i<elements.length; i++) {
         var toRotate = elements[i].getAttribute('data-type');
         var period = elements[i].getAttribute('data-period');
@@ -65,8 +65,13 @@ window.onload = function() {
         }
     }
     // INJECT CSS
-    var css = document.createElement("style");
+    let css = document.createElement("style");
     css.type = "text/css";
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
+
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+
+console.log(vw, vh)
