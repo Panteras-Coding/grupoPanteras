@@ -43,7 +43,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 3;
 }
 
 header img{
@@ -201,6 +201,91 @@ i{
   position: absolute;
 }
 
+.leaderListCont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.leaderCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  margin: 10px 4%;
+  width: 130px;
+  height: auto;
+}
+.leaderCont img{
+  width: 120px;
+  height: auto;
+  margin: 0;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px gray;
+  transition: 250ms;
+}
+.leaderCont img:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 2px 2px 10px gray;
+}
+.leaderCont  h4, h5{
+  margin: 3px;
+  padding: 0;
+  font-weight: normal;
+  color: #6a6a6a;
+}
+
+.grayScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+  display: none;
+  transition: 1000ms;
+}
+
+/* just some content with arbitrary styles for explanation purposes */
+.modal {
+  width: 350px;
+  height: 600px;
+  position: fixed;
+  top: 25%;
+  left: 47%;
+  margin-top: -100px;
+  margin-left: -150px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 11; /* 1px higher than the overlay layer */
+  display: none;
+  transition: 1000ms;
+}
+.modal img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  top: 0;
+}
+
+.closeCross{
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  color: #ee4f4f;
+}
+.closeCross:hover{
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
 /*________________________ICON Hamburguer____________________________*/
 
  .container {
@@ -238,7 +323,6 @@ i{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
 .icon-bar a {
   display: block;
   text-align: center;
@@ -249,9 +333,33 @@ i{
   border-radius: 0 5px 5px 0;
 }
 
+.socialBar {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  margin-right: -15px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.socialBar a {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  border-radius: 100px;
+}
+
+.notOpaque{
+  opacity: 50%;
+}
+
 .facebook {
   background: #3B5998;
-  opacity: 50%;
   color: white;
   transition: 250ms;
 }
@@ -262,7 +370,6 @@ i{
 
 .instagram {
   background: #ec6984;
-  opacity: 50%;
   color: white;
   transition: 250ms;
 }
@@ -274,7 +381,6 @@ i{
 
 .mail {
   background: #22b7ff;
-  opacity: 50%;
   color: white;
   transition: 250ms;
 }
@@ -285,7 +391,6 @@ i{
 
 .linkedin {
   background: #007bb5;
-  opacity: 50%;
   color: white;
   transition: 250ms;
 }
@@ -296,7 +401,6 @@ i{
 
 .youtube {
   background: #bb0000;
-  opacity: 50%;
   color: white;
   transition: 250ms;
 }
@@ -342,6 +446,40 @@ i{
   }
   .slide{
     width: 105vw;
-    padding: 100px 20px 20px 20px;
+    padding: 100px 10px 10px 10px;
+  }
+  .modal {
+    width: 300px;
+    height: 550px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+  }
+  .modal img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    top: 0;
+  }
+  .leaderCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 10px 0;
+    width: 110px;
+    height: auto;
+  }
+  .leaderCont img{
+    width: 70px;
+    height: auto;
+    margin: 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px gray;
+    transition: 250ms;
+  }
+  .leaderCont h5{
+    font-size: 0.7em;
   }
 }

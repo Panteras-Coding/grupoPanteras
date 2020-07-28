@@ -12,6 +12,33 @@ function openNav() {
     }
 }
 
+let openedOverlay = false;
+
+function openMember(n) {
+    if (openedOverlay){
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("overlayCard").style.display = "none";
+        openedOverlay = false
+    } else if (!openedOverlay){
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlayCard").style.display = "block";
+        openedOverlay = true
+    }
+    let members = document.getElementsByClassName('members');
+    for (let i = 0; i < members.length; i++) {
+        members[i].style.display = "none";
+    }
+    members[n].style.display = "block";
+}
+
+function showMember(n) {
+    let members = document.getElementById('members');
+    for (let i = 0; i < members.length; i++) {
+        members[i].style.display = "none";
+    }
+    members[n].style.display = "block";
+}
+
 //Typing Animation
 
 const TxtType = function(el, toRotate, period) {
