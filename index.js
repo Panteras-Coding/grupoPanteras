@@ -104,3 +104,46 @@ const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeig
 if(vw < 700){
     document.getElementById('gif').src = "./Assets/Coding(Móvil).gif"
 }
+
+//Image Carrousel
+
+function openProject(n) {
+    let projects = document.getElementsByClassName('project');
+    for (let i = 0; i < projects.length; i++) {
+        projects[i].style.display = "none";
+    }
+    if(vw < 700){
+        projects[n].style.display = "flex";
+        projects[n].style.flexDirection = "column";
+    } else {
+        projects[n].style.display = "flex";
+        projects[n].style.flexDirection = "row";
+    }
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+}
